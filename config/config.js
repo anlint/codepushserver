@@ -3,10 +3,10 @@ config.development = {
   // Config for database, only support mysql.
   db: {
     username: process.env.RDS_USERNAME || "root",
-    password: process.env.RDS_PASSWORD || null,
+    password: process.env.RDS_PASSWORD || "mysql110root",
     database: process.env.DATA_BASE || "codepush",
     host: process.env.RDS_HOST || "127.0.0.1",
-    port: process.env.RDS_PORT || 3306,
+    port: process.env.RDS_PORT || 3307,
     dialect: "mysql",
     logging: false
   },
@@ -38,9 +38,9 @@ config.development = {
   // Config for local storage when storageType value is "local".
   local: {
     // Binary files storage dir, Do not use tmpdir and it's public download dir.
-    storageDir: process.env.STORAGE_DIR || "/Users/tablee/workspaces/storage",
+    storageDir: process.env.STORAGE_DIR || "/Users/zwmac2/ancademy/codepush/storage",
     // Binary files download host address which Code Push Server listen to. the files storage in storageDir.
-    downloadUrl: process.env.LOCAL_DOWNLOAD_URL || "http://localhost:3000/download",
+    downloadUrl: process.env.LOCAL_DOWNLOAD_URL || "http://localhost:3000/codepush/download",
     // public static download spacename.
     public: process.env.PUBLIC || '/download'
   },
@@ -57,11 +57,11 @@ config.development = {
      */
     tryLoginTimes: 0,
     // CodePush Web(https://github.com/lisong/code-push-web) login address.
-    //codePushWebUrl: "http://localhost:3001/login",
+    codePushWebUrl: "http://localhost:3001/codepush/login",
     // create patch updates's number. default value is 3
     diffNums: 3,
     // data dir for caclulate diff files. it's optimization.
-    dataDir: process.env.DATA_DIR || "/Users/tablee/workspaces/data",
+    dataDir: process.env.DATA_DIR || "/Users/zwmac2/ancademy/codepush/data",
     // storageType which is your binary package files store. options value is ("local" | "qiniu" | "s3")
     storageType: process.env.STORAGE_TYPE || "local",
     // options value is (true | false), when it's true, it will cache updateCheck results in redis.

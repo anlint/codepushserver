@@ -23,13 +23,13 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/link', (req, res) => {
-  res.redirect(`/auth/login`);
+  res.redirect(`/codepush/auth/login`);
 });
 
 router.get('/register', (req, res) => {
   var config = require('../core/config');
   var codePushWebUrl = _.get(config, 'common.codePushWebUrl');
-  var isRedirect = false;
+  var isRedirect = true;
   if (codePushWebUrl) {
     var validator = require('validator');
     if (validator.isURL(codePushWebUrl)){

@@ -1,6 +1,4 @@
 extends layout
-block css
-  link(rel='stylesheet', href='/stylesheets/tokens.css')
 
 block content
   h1(style="text-align: center;")= title
@@ -53,7 +51,7 @@ block js
       $.ajax({
         type: 'post',
         data: postParams,
-        url: '/accessKeys?access_token='+access_token,
+        url: '/codepush/accessKeys?access_token='+access_token,
         dataType: 'json',
         success: function (data) {
           submit = false;
@@ -66,7 +64,7 @@ block js
           submit = false;
           if (errorThrown == 'Unauthorized') {
             alert('请重新登录!');
-            location.href = '/auth/login'
+            location.href = '/codepush/auth/login'
           }else {
             alert(errorThrown);
           }
