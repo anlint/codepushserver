@@ -2,14 +2,12 @@ extends layout
 
 block content
   h1(style="text-align: center;")= title
-  .site-notice
-    a#submitBtn.btn.btn-lg.btn-primary 获取token
+  button#submitBtn.btn.btn-lg.btn-primary 获取token
   .form-group
     #tipsSuccess(style="display:none")
       h2(style="text-align: center;") Authentication succeeded.
       h2(style="text-align: center;") Please copy and paste this access key to the command window:
   .form-group
-    .col-sm-offset-3.col-sm-6
       input#key.form-control(style="display:none" readonly)
   br
   .form-group

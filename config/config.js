@@ -57,7 +57,7 @@ config.development = {
      */
     tryLoginTimes: 0,
     // CodePush Web(https://github.com/lisong/code-push-web) login address.
-    codePushWebUrl: "http://localhost:3001/codepush/login",
+    // codePushWebUrl: "http://localhost:3001/codepush/login",
     // create patch updates's number. default value is 3
     diffNums: 3,
     // data dir for caclulate diff files. it's optimization.
